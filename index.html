@@ -47,6 +47,12 @@ head.ready(function() {
 
 <!-- begin twitter -->
 <script id="twitter-template" type="text/x-handlebars-template">
+	{{#if previous_page}}
+	<a class="link-page" href="http://search.twitter.com/search.json{{previous_page}}">previous page</a>
+	{{/if}}
+	{{#if next_page}}
+	<a class="link-page" href="http://search.twitter.com/search.json{{next_page}}">next page</a>
+	{{/if}}
 	{{#if results.length}}
 		{{#each results}}
 			<li>
@@ -57,12 +63,7 @@ head.ready(function() {
 			</li>
 		{{/each}}
 		
-		{{#if previous_page}}
-		<a class="link-page" href="http://search.twitter.com/search.json{{previous_page}}">previous page</a>
-		{{/if}}
-		{{#if next_page}}
-		<a class="link-page" href="http://search.twitter.com/search.json{{next_page}}">next page</a>
-		{{/if}}
+		
 		
 	{{else}}
 		<p>No job in your search</p>
