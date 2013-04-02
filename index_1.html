@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Handle Bar</title>
+
+<script src="head.min.js" type="text/javascript" ></script> 
+<script>
+head.js('https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
+.js('https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js')
+.js('handlebars-1.0.rc.1.js');
+
+head.ready(function() {
+	head.js('app_1.js')
+});
+
+</script>
+
+</head>
+<body>
+
+	<script id="ajax-comment" type="text/x-handlebars-template">
+	<li>
+		<span class="meta">{{name}} on {{date}}</span>
+		<p>{{{comment}}}</p>
+		{{> social}}
+	</li>
+</script>
+
+<script id="social-partial" type="text/x-handlebars-template">
+{{#if social.length}}
+  			<h4>Social Networks</h4>
+			<ol>
+  			{{#each social}}
+    			<li><span>{{site}} : {{name}}</span> <br/></li>
+  			{{/each}}
+			</ol>
+		{{/if}}
+</script>
+
+
+<ul id="list_comment">
+</ul>
+
+	
+
+</body>
+</html>
